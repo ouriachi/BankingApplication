@@ -98,6 +98,10 @@ public class BankingApplicationHandler {
         System.out.print(BankingConstants.ACCOUNT_IDENTIFIER_MESSAGE);
         String id = scanner.nextLine();
         System.out.print("Enter the amount to deposit: ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a valid numeric value for deposit.");
+            scanner.next();
+        }
         double amount = scanner.nextDouble();
         Account account = accountService.getAccount(id);
         accountService.deposit(amount, account);
@@ -108,6 +112,10 @@ public class BankingApplicationHandler {
         System.out.print(BankingConstants.ACCOUNT_IDENTIFIER_MESSAGE);
         String id = scanner.nextLine();
         System.out.print("Enter amount to withdraw: ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a valid numeric value for withdraw.");
+            scanner.next();
+        }
         double amount = scanner.nextDouble();
         Account account = accountService.getAccount(id);
 

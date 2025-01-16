@@ -113,6 +113,9 @@ class BankingApplicationHandlerTest {
         Scanner mockScanner = mock(Scanner.class);
         when(mockScanner.nextLine())
                 .thenReturn("123456");
+        when(mockScanner.hasNextDouble())
+                .thenReturn(false)
+                .thenReturn(true);
         when(mockScanner.nextDouble()).thenReturn(1000.0);
         BankingApplicationHandler handler = new BankingApplicationHandler(accountService, savingsAccountService);
         handler.setScanner(mockScanner);
@@ -187,6 +190,9 @@ class BankingApplicationHandlerTest {
         Scanner mockScanner = mock(Scanner.class);
         BankingApplicationHandler handler = new BankingApplicationHandler(accountService, savingsAccountService);
         handler.setScanner(mockScanner);
+        when(mockScanner.hasNextDouble())
+                .thenReturn(false)
+                .thenReturn(true);
         when(mockScanner.nextLine()).thenReturn(accountId);
         when(mockScanner.nextDouble()).thenReturn(amount);
         when(accountService.getAccount(accountId)).thenReturn(account);
@@ -207,7 +213,9 @@ class BankingApplicationHandlerTest {
         Scanner mockScanner = mock(Scanner.class);
         BankingApplicationHandler handler = new BankingApplicationHandler(accountService, savingsAccountService);
         handler.setScanner(mockScanner);
-
+        when(mockScanner.hasNextDouble())
+                .thenReturn(false)
+                .thenReturn(true);
         when(mockScanner.nextLine()).thenReturn(accountId);
         when(mockScanner.nextDouble()).thenReturn(amount);
         when(accountService.getAccount(accountId)).thenReturn(account);
