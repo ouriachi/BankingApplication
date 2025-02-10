@@ -1,0 +1,45 @@
+<div class="home-container">
+    <header>
+      <nav>
+        <div class="logo">Banque XYZ</div>
+        <ul>
+          <li><a routerLink="/services">Services</a></li>
+          <li><a routerLink="/about">À propos</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/login" class="btn">Se connecter</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <section class="hero">
+      <h1>Votre banque, votre avenir</h1>
+      <p>Gérez vos finances en toute simplicité et sécurité.</p>
+      <a routerLink="/services" class="btn">Découvrir nos services</a>
+    </section>
+  
+    <section id="services">
+      <h2>Nos services</h2>
+      <div class="services-container">
+        <div class="service" *ngFor="let service of services">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+    </section>
+  
+    <section id="about">
+      <h2>À propos de nous</h2>
+      <p>Banque XYZ accompagne ses clients depuis plus de 50 ans avec des solutions innovantes et sécurisées.</p>
+    </section>
+  
+    <section id="contact">
+      <h2>Contactez-nous</h2>
+      <p>Besoin d’aide ? Nos conseillers sont à votre disposition.</p>
+      <a href="mailto:contact@banquexyz.com" class="btn">Envoyer un email</a>
+    </section>
+  
+    <footer>
+      <p>&copy; 2025 Banque XYZ. Tous droits réservés.</p>
+    </footer>
+  </div>
+  
